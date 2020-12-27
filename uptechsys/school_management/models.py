@@ -22,9 +22,17 @@ class School(models.Model):
     phone_number = models.IntegerField()
     # faculties: FK
     student = models.ForeignKey(Student)
-    # teacher: MM
     established = models.DateField()
 
     def __str__(self):
         return self.name
 
+
+class Teacher(models.Model):
+    name = models.CharField(max_length=100)
+    phone_number = models.IntegerField()
+    address = models.CharField(max_length=100)
+    school = models.ManyToManyField(School)
+    salary = models.FloatField()
+    # subject: MM
+    # faculties: OO
