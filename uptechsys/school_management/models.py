@@ -5,7 +5,7 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
     email = models.EmailField(null=True, blank=True)
-    dob = models.DateTimeField()
+    dob = models.DateField()
     address = models.CharField(max_length=150)
     father_name = models.CharField(max_length=100)
     mother_name = models.CharField(max_length=100)
