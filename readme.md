@@ -2,6 +2,7 @@
 ### [Models File](./uptechsys/school_management/models.py)
 
 ### Student
+- id: IntegerField, PrimaryKey
 - name: CharField
 - age: IntegerField
 - email: EmailField
@@ -15,6 +16,7 @@
 - mother_occupation: CharField
 
 ### School
+- id: IntegerField, PrimaryKey
 - name: CharField
 - address: CharField
 - school_type: CharField
@@ -23,6 +25,7 @@
 - established: DateField
 
 ### Teacher
+- id: IntegerField, PrimaryKey
 - name: CharField
 - phone_number: IntegerField
 - address: CharField
@@ -30,16 +33,19 @@
 - salary: FloatField
 
 ### Faculty
+- id: IntegerField, PrimaryKey
 - name: CharField
 - student: OneToOneField(Student)
 - teacher: OneToOneField(Teacher)
 
 ### Subject
+- id: IntegerField, PrimaryKey
 - name: CharField
 - subject_teacher: ManyToManyField(Teacher)
 - subject_faculty: ManyToManyField(Faculty)
 
 ### Exam
+- id: IntegerField, PrimaryKey
 - name: CharField
 - exam_date: DateTimeField
 - student_exam: ForeignKey(Student)
