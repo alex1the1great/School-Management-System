@@ -14,3 +14,17 @@ class Student(models.Model):
     father_occupation = models.CharField(max_length=100)
     mother_occupation = models.CharField(max_length=100)
 
+
+class School(models.Model):
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    school_type = models.CharField(max_length=100)
+    phone_number = models.IntegerField()
+    # faculties: FK
+    student = models.ForeignKey(Student)
+    # teacher: MM
+    established = models.DateField()
+
+    def __str__(self):
+        return self.name
+
